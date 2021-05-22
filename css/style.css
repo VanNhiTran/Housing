@@ -118,6 +118,10 @@ header ul a:hover {
   content: "";
 }
 
+.slick-next:hover {
+  background: ;
+}
+
 /* ABOUT  */
 
 .about {
