@@ -7,7 +7,13 @@
     <title>Housing</title>
 
     <!-- POPUP  -->
-    <link href="dist/lsb.css" rel="stylesheet" />
+    <link href="./lsb-lightbox-master/dist/lsb.css" rel="stylesheet" />
+
+    <!-- POPUP VIDEO  -->
+    <link
+      rel="stylesheet"
+      href="./Magnific-Popup-master/dist/magnific-popup.css"
+    />
 
     <!-- BS4 -->
     <link
@@ -334,24 +340,9 @@
     <section class="more">
       <div class="more__container">
         <div class="more__video">
-          <video controls poster="./images/video.jpg">
-            <source src="https://vimeo.com/106770833" type="video/mp4" />
-          </video>
-          <!-- <iframe
-            src="https://player.vimeo.com/video/106770833"
-            width="640"
-            height="360"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-          ></iframe> -->
-          <!-- <p>
-            <a href="https://vimeo.com/106770833"
-              >Real Estate - The Stone Mansion</a
-            >
-            from <a href="https://vimeo.com/user6285410">Bobi Dojcinovski</a> on
-            <a href="https://vimeo.com">Vimeo</a>.
-          </p> -->
+          <a id="video" href="https://player.vimeo.com/video/106770833">
+            <i class="fa fa-play-circle"></i>
+          </a>
         </div>
         <div class="more__text">
           <h1>Get More..</h1>
@@ -616,6 +607,22 @@
     <!-- POPUP  -->
     <script src="./lsb-lightbox-master/dist/lsb.min.js"></script>
 
+    <!-- POPUP VIDEO  -->
+    <script src="./Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+
+    <script>
+      $("#video").magnificPopup({
+        type: "iframe",
+        iframe: {
+          markup:
+            '<div class="mfp-iframe-scaler">' +
+            '<div class="mfp-close"></div>' +
+            '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+            '<div class="mfp-title">Some caption</div>' +
+            "</div>",
+        },
+      });
+    </script>
     <!-- WAYPOINT  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
@@ -646,6 +653,8 @@
       });
     </script>
 
+    <script src="./js/main.js"></script>
+    <script src="./js/util.js"></script>
     <script>
       $(window).on("load", function () {
         $.fn.lightspeedBox();
